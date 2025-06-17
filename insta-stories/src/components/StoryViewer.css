@@ -1,0 +1,175 @@
+/* Background gradient */
+.bg-gold {
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+}
+
+/* Story carousel improvements */
+.carousel {
+  transition: transform 0.3s ease;
+}
+
+.carousel:hover {
+  transform: scale(1.05);
+}
+
+.carousel img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Story viewer */
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Media container (image/video) */
+.relative {
+  position: relative;
+  background-color: #1c1c1c;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Progress bar */
+.progress-bar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #fff;
+  transition: width 0.2s ease;
+}
+
+.progress-bar-completed {
+  width: 100%;
+}
+
+/* Navigation buttons */
+button {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+/* Left/Right Navigation */
+.left-btn,
+.right-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+}
+
+.left-btn {
+  left: 4%;
+}
+
+.right-btn {
+  right: 4%;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.close-btn:hover {
+  opacity: 0.7;
+}
+
+/* Thumbnails & Username */
+.thumbnail-container {
+  text-align: center;
+}
+
+.thumbnail-container img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 2px solid #ff6f61;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail-container img:hover {
+  transform: scale(1.1);
+}
+
+.thumbnail-container span {
+  color: white;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Story transition animations */
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Apply the slide-in effect for media */
+img,
+video {
+  animation: slidein 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  /* Thumbnails */
+  .thumbnail-container img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .left-btn,
+  .right-btn {
+    font-size: 1.25rem;
+  }
+}
